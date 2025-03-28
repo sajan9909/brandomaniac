@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+    
+    <!-- Hero Section (Dynamic) -->
+    <section id="hero-section" class="w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-0 ">
+        <!-- Hero content will be inserted here dynamically -->
+    </section>
+
+    <!-- Branding Types (Dynamic) -->
+    <section id="branding-section" class="px-8 md:px-24 py-16 space-y-16">
+        <!-- Branding categories will be inserted here dynamically -->
+    </section>
+
+    <!-- Branding Summary (Dynamic) -->
+    <section id="branding-summary" class="text-center mt-20 px-8 md:px-24 py-16 bg-gray-900">
+        <!-- Branding summary content will be inserted here dynamically -->
+    </section>
+
+    <section class="pt-20 text-center">
+        <a href="./contactUs.html"
+        class="mt-12 px-10 py-4 text-lg font-semibold rounded-full bg-gradient-to-r 
+               from-orange-500 to-yellow-400 text-black shadow-lg transition 
+               hover:scale-110 hover:opacity-90"
+        data-aos="zoom-in" data-aos-duration="1400">
+         Get Started 🚀
+       </a>
+       </section>
+
+    <!-- Footer -->
+
+<!-- Footer -->
+<footer class="bg-black text-white py-20">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            
+            <!-- Branding & Motto -->
+            <div class="text-center md:text-left">
+                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">&copy; 2024 All Rights Reserved</p>
+            </div>
+            
+
+            <!-- Contact Info -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Contact Us</h3>
+                <p class="mt-4 text-gray-400 text-lg">
+                    <span class="text-orange-400">Head Office:</span><br>
+                    Bapunagar, Ahmedabad<br> 
+                    Gujarat- 380024
+                </p>
+                <p class="mt-4 text-orange-400 hover:text-yellow-400 transition">hello.brandomaniac@gmail.com</p>
+                <!-- <p class="mt-2 text-gray-400 text-lg">+91 8086411901</p> -->
+            </div>
+
+            <!-- Newsletter & Social Links -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
+                <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
+                    <input type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button class="text-orange-400 hover:text-yellow-400 transition"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="mt-6 flex justify-center md:justify-start space-x-6">
+                    <a href="https://www.linkedin.com/company/brandomaniac-india/" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/brandomaniac.official/" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider Line -->
+    <div class="border-t border-orange-500 mt-12"></div>
+
+    <!-- Bottom Section -->
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center mt-8">
+        <p class="text-gray-400 text-lg">Designed with 🔥 by Brandomaniac</p>
+
+        <!-- Floating Scroll to Top Button -->
+        <div onclick="scrollToTop()" class="hidden md:block bg-gradient-to-r from-orange-500 to-yellow-400 text-black transition p-4 rounded-full shadow-lg cursor-pointer">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Script -->
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <script>
+        // Hero section data
+        const heroData = {
+            title: "Branding That Elevates Your Business",
+            description: "Branding is more than just a logo—it's the voice, identity, and experience that sets your business apart. We specialize in creating a powerful brand presence that connects with your audience and drives success.",
+            imageUrl: "./assets/branding_h.jpg"
+        };
+
+        // Branding categories data
+        const brandingTypes = [
+            { title: "Personal Branding 👤", description: "Build a unique identity that makes you stand out as an expert in your industry. Perfect for influencers, coaches, and entrepreneurs." },
+            { title: "Corporate Branding 🏢", description: "Strengthen your company's reputation with a consistent brand identity that reflects your values and mission." },
+            { title: "Product Branding 📦", description: "Transform your product into a recognizable and loved brand through strategic design and marketing." },
+            { title: "Service Branding 🎭", description: "Elevate customer trust and loyalty with a seamless, high-quality service experience." }
+        ];
+
+        // Branding Summary data
+        const brandingSummaryData = {
+            title: "Why Branding Matters?",
+            description: "A strong brand sets you apart from competitors, builds customer trust, and drives business success. Whether you're starting fresh or rebranding, we help craft a compelling identity that resonates with your audience."
+        };
+
+       // Get Hero section and insert content dynamically
+    document.getElementById("hero-section").innerHTML = `
+    <section class="h-screen w-full flex flex-col lg:flex-row items-center justify-end bg-black text-white relative px-3 md:px-4 rounded-xl">
+        <!-- Background Image with Fade Effect (Hidden on Small Screens) -->
+        <div class="absolute inset-0 lg:left-0 lg:w-3/6 w-full h-full bg-cover bg-center hidden md:block"
+            style="
+                background-image: url('${heroData.imageUrl}'); 
+                mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            ">
+        </div>
+
+        <!-- Overlay for better text visibility on small screens -->
+        <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
+
+        <!-- Quote Text (Responsive Alignment) -->
+        <div class="relative z-10 max-w-2xl w-full lg:w-3/6 ml-auto pr-4 lg:pr-12 text-center lg:text-left px-4">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed tracking-wide bg-gradient-to-b from-red-500 to-yellow-400 text-transparent bg-clip-text drop-shadow-lg transition-transform duration-700 hover:scale-105">
+                "${heroData.title}"
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl lg:text-3xl font-semibold text-gray-300">- ${heroData.description}</p>
+        </div>
+    </section>
+`;
+
+        // Get Branding section and insert content dynamically
+const brandingSection = document.getElementById("branding-section");
+
+// Add a title for the section
+const title = document.createElement("h2");
+title.className = "text-5xl font-bold text-yellow-400 text-center mb-12";
+title.textContent = "Types of Branding";
+brandingSection.appendChild(title);
+
+for (let i = 0; i < brandingTypes.length; i += 2) {
+    const rowDiv = document.createElement("div");
+    rowDiv.className = "flex flex-col md:flex-row justify-center items-center gap-8 mb-8";
+
+    let col1 = document.createElement("div");
+    col1.className = "md:w-2/5 bg-gray-800 p-6 rounded-lg shadow-lg text-center";
+    col1.innerHTML = `
+        <h2 class="text-3xl font-bold text-yellow-400">${brandingTypes[i].title}</h2>
+        <p class="mt-2 text-gray-300">${brandingTypes[i].description}</p>
+    `;
+    rowDiv.appendChild(col1);
+
+    if (i + 1 < brandingTypes.length) {
+        let col2 = document.createElement("div");
+        col2.className = "md:w-2/5 bg-gray-800 p-6 rounded-lg shadow-lg text-center";
+        col2.innerHTML = `
+            <h2 class="text-3xl font-bold text-yellow-400">${brandingTypes[i + 1].title}</h2>
+            <p class="mt-2 text-gray-300">${brandingTypes[i + 1].description}</p>
+        `;
+        rowDiv.appendChild(col2);
+    }
+
+    brandingSection.appendChild(rowDiv);
+}
+
+
+        // Get Branding Summary section and insert content dynamically
+        document.getElementById("branding-summary").innerHTML = `
+            <h2 class="text-5xl font-bold text-yellow-400">${brandingSummaryData.title}</h2>
+            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">${brandingSummaryData.description}</p>
+        `;
+    </script>
+
+</body>
+</html>

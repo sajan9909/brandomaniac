@@ -1,0 +1,1024 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include AOS Library (Add this in the <head> section of your HTML) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+       
+    
+
+    <style>
+        /* Hide scrollbar without affecting layout */
+::-webkit-scrollbar {
+    width: 0px;  /* Hides vertical scrollbar */
+    height: 0px; /* Hides horizontal scrollbar */
+}
+
+/* Prevent blank space on the right */
+body, html {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Static Background Text */
+.static-text {
+    font-size: 6rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2); /* Light opacity */
+    text-align: center;
+    position: relative; /* Changed from absolute */
+    width: 100%;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+/* Vertical text (if needed, otherwise remove) */
+.vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* Floating Emoji Animation */
+.emoji {
+    position: absolute;
+    top: 5%;
+    animation: bounce 3s infinite ease-in-out alternate, swing 5s infinite ease-in-out;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100px); }
+}
+
+/* Swing effect */
+@keyframes swing {
+    0% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+/* Floating animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 5s infinite ease-in-out;
+}
+
+/* Infinite Scrolling Animation */
+@keyframes scroll-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Moves only half since images are duplicated */
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+/* Scroll Wrapper to Prevent Overflow */
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Applying Animation */
+.animate-scroll-right {
+    display: flex;
+    animation: scroll-right 20s linear infinite;
+}
+
+.animate-scroll-left {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Work Step Cards */
+.work-step {
+    border: 1px solid #444;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 18rem;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-step h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.work-step p {
+    color: #ddd;
+    margin-top: 0.5rem;
+}
+
+/* Hover Effect - Expand + No Content Cutting */
+.work-step:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);
+    z-index: 10;
+}
+
+/* Gallery Cards */
+.gallery-card {
+    width: 350px;
+    height: 250px;
+    background: rgba(50, 50, 50, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mild Glow Effect */
+.gallery-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 94, 0, 0.778),  
+                0 10px 20px rgb(255, 140, 0), 
+                0 12px 24px rgba(255, 174, 0, 0.984);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.word {
+    opacity: 0;
+    color: #ffcc00;
+    animation: fadeIn 1.5s ease-in-out infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .static-text {
+        font-size: 3rem;
+        top: 35%;
+    }
+}
+
+@media (min-width: 640px) {
+    .gallery-card {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-card {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); } /* Moves half since images are duplicated */
+    }
+
+    .animate-scroll {
+        display: flex;
+        animation: scroll 20s linear infinite; /* Adjust speed here */
+    }
+
+    </style>
+</head>
+
+
+<body class="bg-black text-white">
+
+    <header class="bg-black p-5 flex justify-between items-center shadow-lg relative w-full">
+        <!-- Logo -->
+        <div class="text-center md:text-left">
+            <img src="./assets/image.png" alt="Company Logo" class="h-12 w-12 mx-auto md:mx-0 rounded-full border-2 border-gray-300 shadow-md">
+        </div>
+        
+    
+        <!-- Hamburger Icon (Mobile) -->
+        <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    
+        <!-- Navigation -->
+        <nav id="menu" class="hidden absolute top-full left-0 w-full bg-black text-center md:flex md:relative md:w-auto">
+            <ul class="flex flex-col md:flex-row md:space-x-10 md:mr-10">
+                <li>
+                    <a href="#" class="bg-gradient-to-r from-orange-600 to-yellow-500 text-transparent bg-clip-text hover:underline transition duration-300 block py-3 md:py-0">
+                        Home
+                    </a>
+                </li>
+    
+                <!-- Services Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="bg-gradient-to-r from-orange-600 to-yellow-500 text-transparent bg-clip-text hover:underline transition duration-300 block py-3 md:py-0">
+                        Services
+                    </a>
+    
+                    <!-- Dropdown -->
+                    <ul class="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-56 bg-gray-900 text-white rounded-lg shadow-lg 
+                               opacity-0 scale-95 transform transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 z-50">
+                        <li class="border-b border-gray-800 hover:bg-orange-500 hover:text-black">
+                            <a href="./freeConsultation.html" class="block px-6 py-3">Consultation</a>
+                        </li>
+                        <li class="border-b border-gray-800 hover:bg-orange-500 hover:text-black">
+                            <a href="./getWebsiteNow.html" class="block px-6 py-3">Web Development</a>
+                        </li>
+                        <li class="border-b border-gray-800 hover:bg-orange-500 hover:text-black">
+                            <a href="./appDevelopment.html" class="block px-6 py-3">App Development</a>
+                        </li>
+                        <li class="hover:bg-orange-500 hover:text-black">
+                            <a href="./branding.html" class="block px-6 py-3">Branding</a>
+                        </li>
+                        <li class="hover:bg-orange-500 hover:text-black">
+                            <a href="./Marketing.html" class="block px-6 py-3">Marketing</a>
+                        </li>
+                        <li class="border-b border-gray-800 hover:bg-orange-500 hover:text-black">
+                            <a href="./erpSystems.html" class="block px-6 py-3">ERP Systems</a>
+                        </li>
+                        <li class="border-b border-gray-800 hover:bg-orange-500 hover:text-black">
+                            <a href="./SEO.html" class="block px-6 py-3">SEO Optimization</a>
+                        </li>
+                        <li class="border-b border-gray-800 hover:bg-orange-500 hover:text-black">
+                            <a href="./contentCreation(Ads_Shoots).html" class="block px-6 py-3">Content Creation</a>
+                        </li>
+                        <li class="hover:bg-orange-500 hover:text-black">
+                            <a href="./socialMedia.html" class="block px-6 py-3">Social Media Management</a>
+                        </li>
+                    </ul>
+                </li>
+    
+                <li>
+                    <a href="#aboutus" class="bg-gradient-to-r from-orange-600 to-yellow-500 text-transparent bg-clip-text hover:underline transition duration-300 block py-3 md:py-0">
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a href="./contactUs.html" class="bg-gradient-to-r from-orange-600 to-yellow-500 text-transparent bg-clip-text hover:underline transition duration-300 block py-3 md:py-0">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    
+        <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-600 to-yellow-500"></div>
+    </header>
+    
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function () {
+            document.getElementById("menu").classList.toggle("hidden");
+        });
+    </script>
+
+<section class="w-full h-screen flex items-center justify-center bg-black">
+    <div class="relative w-full h-full max-w-screen-xl mx-auto shadow-2xl border border-gray-700">
+        
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline preload="auto" class="absolute top-0 left-0 w-full h-full object-cover will-change-transform">
+            <source src="./assets/build-your-brand-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay for Better Visibility (Fixed, No Color Change) -->
+        <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
+
+    </div>
+</section>
+
+
+
+    
+<section class="w-full min-h-[80vh] sm:min-h-[90vh] flex flex-col items-center justify-center text-center bg-black text-white px-4 sm:px-6">
+    <!-- Heading with hover scale effect -->
+    <h1 class="text-xl sm:text-2xl pb-6 sm:pb-10 md:text-6xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text leading-tight transition-transform duration-300 hover:scale-110">
+        Brandomaniac – Your Growth Catalyst!
+    </h1>
+
+    <!-- Paragraph with hover scale effect -->
+    <p class="text-base sm:text-lg md:text-2xl mt-4 max-w-xl sm:max-w-3xl text-gray-300 transition-transform duration-300 hover:scale-105">
+        We don’t just create brands; we craft legacies. <br class="hidden md:block">
+        From strategy to execution, we transform businesses into  
+        <span class="text-yellow-400 font-semibold">powerful, recognizable brands</span>  
+        that thrive in the digital era.
+    </p>
+
+    <!-- Call to Action Buttons with hover scale effect -->
+    <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+        <a href="#services" class="px-6 py-3 text-base sm:text-lg font-semibold rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-black shadow-lg transition-transform duration-300 hover:scale-110 hover:opacity-80">
+            Get Started
+        </a>
+        <a href="#aboutus" class="px-6 py-3 text-base sm:text-lg font-semibold rounded-full border border-yellow-400 text-yellow-400 transition-transform duration-300 hover:scale-110 hover:bg-yellow-400 hover:text-black">
+            Learn More
+        </a>
+    </div>
+</section>
+
+
+    
+<section class="w-full min-h-[80vh] sm:min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-6 sm:px-12 md:px-24 bg-cover bg-center text-white">
+    
+    <!-- Left Side Text -->
+    <div class="text-4xl sm:text-5xl md:text-8xl font-extrabold leading-tight text-center md:text-left">
+        <p class="word" style="animation-delay: 0s;">Let’s</p>
+        <p class="word" style="animation-delay: 0.5s;">Build</p>
+        <p class="word" style="animation-delay: 1s;">Your</p>
+        <p class="word" style="animation-delay: 1.5s;">Brand</p>
+        <p class="word" style="animation-delay: 2s;">Today!</p>
+    </div>
+
+    <!-- Right Side Image -->
+    <div class="w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+        <div class="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-64 sm:h-80 md:h-[500px] overflow-hidden rounded-2xl shadow-lg">
+            <img src="./assets/growth1.png" alt="About Us Image" class="w-full h-full object-cover">
+            
+            <!-- Floating Accents -->
+            <div class="absolute top-4 left-4 w-14 sm:w-20 h-14 sm:h-20 bg-red-600 opacity-50 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-4 right-4 w-24 sm:w-32 h-24 sm:h-32 bg-yellow-400 opacity-50 rounded-full blur-3xl"></div>
+        </div>
+    </div>
+
+</section>
+
+
+
+     <!-- Full-Screen Image Gallery with Scrollbar -->
+     <section class="w-full h-screen flex flex-col justify-center gap-10 bg-black overflow-hidden px-6">
+        <!-- First Scrollable Gallery (Scrolling Right) -->
+        <div class="relative w-full">
+            <div class="flex gap-10 w-max animate-scroll-right">
+                <!-- Dynamic Images for Seamless Scrolling -->
+                <div class="gallery-card"><img src="./assets/adsShoot_v.jpg" alt="Gallery Image 1"></div>
+                <div class="gallery-card"><img src="./assets/appDevelopment.avif" alt="Gallery Image 2"></div>
+                <div class="gallery-card"><img src="./assets/branding_h.jpg" alt="Gallery Image 3"></div>
+                <div class="gallery-card"><img src="./assets/consultation.png" alt="Gallery Image 4"></div>
+    
+                <!-- Duplicated for Seamless Scrolling -->
+                <div class="gallery-card"><img src="./assets/adsShoot_v.jpg" alt="Gallery Image 1"></div>
+                <div class="gallery-card"><img src="./assets/appDevelopment.avif" alt="Gallery Image 2"></div>
+                <div class="gallery-card"><img src="./assets/branding_h.jpg" alt="Gallery Image 3"></div>
+                <div class="gallery-card"><img src="./assets/consultation.png" alt="Gallery Image 4"></div>
+            </div>
+        </div>
+    
+        <!-- Second Scrollable Gallery (Scrolling Left) -->
+        <div class="relative w-full">
+            <div class="flex gap-10 w-max animate-scroll-left">
+                <!-- Dynamic Images for Seamless Scrolling -->
+                <div class="gallery-card"><img src="./assets/growth_h.jpg" alt="Gallery Image 5"></div>
+                <div class="gallery-card"><img src="./assets/adsShoots_h.jpg" alt="Gallery Image 6"></div>
+                <div class="gallery-card"><img src="./assets/branding_v.jpg" alt="Gallery Image 7"></div>
+                <div class="gallery-card"><img src="./assets/erp1_h.jpg" alt="Gallery Image 8"></div>
+    
+                <!-- Duplicated for Seamless Scrolling -->
+                <div class="gallery-card"><img src="./assets/growth_h.jpg" alt="Gallery Image 5"></div>
+                <div class="gallery-card"><img src="./assets/adsShoots_h.jpg" alt="Gallery Image 6"></div>
+                <div class="gallery-card"><img src="./assets/branding_v.jpg" alt="Gallery Image 7"></div>
+                <div class="gallery-card"><img src="./assets/erp1_h.jpg" alt="Gallery Image 8"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-black text-center">
+        <div class="w-full max-w-4xl">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-yellow-400 to-red-500 inline-block text-transparent bg-clip-text transition-transform duration-300 ease-in-out hover:scale-105">
+                Elevate Your Brand with 360° Business Solutions
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mt-6 transition-transform duration-300 ease-in-out hover:scale-105">
+                From branding and software development to SEO and social media marketing, we provide a strategic approach to business success.
+            </p>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mt-4 transition-transform duration-300 ease-in-out hover:scale-105">
+                Whether you're a startup or an established brand, we’re here to take you to the next level.
+            </p>
+        </div>
+    </section>
+    
+    
+    
+    
+
+<section class="h-screen flex items-center justify-center bg-black">
+    <h1 class="text-6xl md:text-9xl font-extrabold uppercase tracking-wide text-transparent"
+        style="-webkit-text-stroke: 2px rgb(255, 123, 0);"
+        data-aos="fade-left" data-aos-duration="1000">
+        Website Specialist
+    </h1>
+</section>
+
+
+<section class="w-full py-20 bg-black text-white text-center px-6">
+    <div class="max-w-6xl mx-auto text-center px-6">
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text leading-tight transition-transform duration-300 hover:scale-110">
+            Build a <span class="text-orange-700">Website</span> That Drives Success
+        </h2>
+    
+        <!-- Subtext -->
+        <p class="text-lg md:text-2xl mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed transition-transform duration-300 hover:scale-105">
+            Your <span class="text-yellow-400 font-semibold">website</span> is the face of your business. 
+            We create fast, responsive, and scalable solutions that  
+            engage users & maximize conversions.
+        </p>
+    </div>
+    
+    <!-- Image Section -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+        <img src="./assets/website.png" alt="Web Development" class="rounded-lg shadow-lg hover:scale-105 transition duration-300">
+
+        <div class="bg-gray-900 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-2xl mx-auto text-left">
+            <h3 class="text-3xl font-extrabold text-transparent bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text mb-6">
+                Why Choose Us?
+            </h3>
+            
+            <ul class="space-y-6 text-gray-300">
+                <li class="border-l-4 border-yellow-400 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">Custom, User-Friendly Design</span> – Tailored websites that reflect your brand identity.</p>
+                </li>
+                
+                <li class="border-l-4 border-yellow-400 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">E-Commerce & CMS</span> – Secure online stores & easy-to-manage content.</p>
+                </li>
+                
+                <li class="border-l-4 border-yellow-400 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">SEO-Optimized & Fast</span> – High-speed websites optimized for search engines.</p>
+                </li>
+                
+                <li class="border-l-4 border-yellow-400 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">Mobile-First Approach</span> – Fully responsive on all devices.</p>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Key Features -->
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div class="p-6 border border-gray-700 rounded-lg bg-gray-900 hover:scale-105 transition-transform duration-300">
+            <img src="./assets/image.png" alt="Custom Design" class="w-full h-32 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-bold text-yellow-400">Custom Web Design</h3>
+            <p class="text-gray-300 mt-2">We craft unique, user-friendly websites tailored to your brand.</p>
+        </div>
+        <div class="p-6 border border-gray-700 rounded-lg bg-gray-900 hover:scale-105 transition-transform duration-300">
+            <img src="./assets/image.png" alt="E-Commerce" class="w-full h-32 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-bold text-yellow-400">E-Commerce Solutions</h3>
+            <p class="text-gray-300 mt-2">Seamless online stores with secure payment integrations.</p>
+        </div>
+        <div class="p-6 border border-gray-700 rounded-lg bg-gray-900 hover:scale-105 transition-transform duration-300">
+            <img src="./assets/image.png" alt="SEO Optimization" class="w-full h-32 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-bold text-yellow-400">SEO & Performance</h3>
+            <p class="text-gray-300 mt-2">Optimized for speed, mobile-friendliness, and search engine rankings.</p>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-20">
+        <a href="./getWebsiteNow.html" class="px-8 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-black shadow-lg transition-transform duration-300 hover:scale-110 hover:opacity-80">
+            Get Your Website Now
+        </a>
+    </div>
+</section>
+
+
+
+
+
+
+<section class="w-full h-screen flex items-center justify-between px-6 sm:px-12 md:px-16 bg-gradient-to-r from-gray-800 to-black text-white relative">
+    
+    <!-- Vertical Left Text (Hidden on Small Screens) -->
+    <div class="h-full flex items-center">
+        <p class="hidden md:block text-7xl font-extrabold tracking-widest rotate-180 vertical-rl 
+                  bg-gradient-to-b from-red-500 to-yellow-400 text-transparent bg-clip-text">
+            Brandomaniac
+        </p>
+    </div>
+
+    <!-- Right Text: 360° above Business Support -->
+    <div class="flex flex-col text-right transform transition-all duration-500 hover:scale-105">
+        <p class="text-5xl sm:text-7xl md:text-9xl font-extrabold sm:mr-10 md:mr-40 bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text drop-shadow-xl">
+            360°
+        </p>
+        <p class="text-3xl sm:text-5xl md:text-7xl font-semibold sm:mr-10 md:mr-40 text-gray-200 drop-shadow-lg">
+            Business Support
+        </p>
+    </div>
+
+</section>
+
+
+<!-- Hero Section -->
+<section class="h-screen flex items-center justify-center bg-black">
+    <h1 class="text-6xl md:text-9xl font-extrabold uppercase tracking-wide text-transparent"
+        style="-webkit-text-stroke: 2px rgb(255, 165, 0);" 
+        data-aos="flip-up" data-aos-duration="1200">
+        Ads & Shoots
+    </h1>
+</section>
+
+<!-- Ads & Shoots Section -->
+<section class="w-full py-20 bg-gray-900 text-white text-center px-6">
+    <div class="max-w-6xl mx-auto text-center px-6">
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 leading-tight transition-transform duration-300 hover:scale-105">
+            Captivate Your Audience with <span class="text-orange-500">Visual Excellence</span>
+        </h2>
+
+        <!-- Subtext -->
+        <p class="text-lg md:text-2xl mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed transition-opacity duration-300 hover:opacity-80">
+            High-quality <span class="text-yellow-400 font-semibold">ads</span> & <span class="text-orange-500 font-semibold">shoots</span> that bring your brand to life.  
+            Elevate your marketing with stunning visuals and cinematic experiences.
+        </p>
+    </div>
+
+    <!-- Image & Content -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+        <img src="./assets/adsShoots_h.jpg" alt="Studio Shoot" 
+            class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 animate-fade-in">
+        
+        <div class="bg-black p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 max-w-2xl mx-auto text-left">
+            <h3 class="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text mb-6">
+                Our Expertise
+            </h3>
+
+            <ul class="space-y-6 text-gray-300">
+                <li class="border-l-4 border-yellow-500 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">Cinematic Commercials</span> – High-impact video ads that drive engagement.</p>
+                </li>
+
+                <li class="border-l-4 border-yellow-500 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">Brand Photography</span> – Capture your brand’s essence with stunning images.</p>
+                </li>
+
+                <li class="border-l-4 border-yellow-500 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">Product & Fashion Shoots</span> – Professional, eye-catching visuals.</p>
+                </li>
+
+                <li class="border-l-4 border-yellow-500 pl-4 hover:scale-105 transition-transform duration-300">
+                    <p><span class="text-yellow-400 font-semibold">Event Videography</span> – Capture moments with high-definition cinematography.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div class="p-6 border border-gray-700 rounded-lg bg-black hover:scale-105 transition-transform duration-300">
+            <img src="./assets/image.png" alt="Video Production" class="w-full h-32 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-bold text-yellow-400">High-End Video Production</h3>
+            <p class="text-gray-300 mt-2">Story-driven ads & promos that leave a lasting impact.</p>
+        </div>
+        <div class="p-6 border border-gray-700 rounded-lg bg-black hover:scale-105 transition-transform duration-300">
+            <img src="./assets/image.png" alt="Brand Photography" class="w-full h-32 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-bold text-yellow-400">Creative Branding Shoots</h3>
+            <p class="text-gray-300 mt-2">Stand out with compelling brand visuals & aesthetics.</p>
+        </div>
+        <div class="p-6 border border-gray-700 rounded-lg bg-black hover:scale-105 transition-transform duration-300">
+            <img src="./assets/image.png" alt="Event Coverage" class="w-full h-32 object-cover rounded-md mb-4">
+            <h3 class="text-2xl font-bold text-yellow-400">Live Event Coverage</h3>
+            <p class="text-gray-300 mt-2">Capture key moments from events, shows, and launches.</p>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-20">
+        <a href="./contentCreation(Ads_Shoots).html" class="px-8 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-lg transition-transform duration-300 hover:scale-110 hover:opacity-80">
+            Get a Custom Shoot Now
+        </a>
+    </div>
+</section>
+
+
+
+<section class="relative h-screen w-full flex items-center justify-center bg-black text-white overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover opacity-80">
+        <source src="./assets/Untitled design.mp4" type="video/mp4">
+    </video>
+
+    <!-- Text Overlay -->
+    <h1 class="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-center uppercase px-4 
+           transition-transform duration-300 transform hover:scale-110
+           text-white drop-shadow-[6px_6px_0px_rgba(0,0,0,0.8)] hover:drop-shadow-[10px_10px_0px_rgba(0,0,0,1)]">
+    Let's Fly High
+</h1>
+
+</section>
+
+
+
+<section class="relative w-full h-screen flex items-center justify-center text-center bg-black text-white overflow-hidden">
+    <!-- Background Video -->
+    <video autoplay loop muted class="absolute w-full h-full object-cover opacity-30">
+        <source src="your-video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay for Readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 w-full mx-auto px-6">
+        <div class="flex justify-center items-center text-center w-full">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide leading-tight 
+                       bg-gradient-to-r from-red-500 to-yellow-400 inline-block text-transparent bg-clip-text">
+                We Build Brands That Dominate
+            </h1>
+        </div>
+        
+
+        <p class="mt-4 text-lg md:text-xl text-gray-300">
+            From logo to market leadership—We make it happen.
+        </p>
+        <div class="mt-6">
+            <a href="./freeConsultation.html" class="px-6 py-3 bg-red-600 text-white text-lg font-semibold rounded-lg shadow-lg 
+                             hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                Get a Free Consultation
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Service Section -->
+<section id="services" class="w-full py-20 bg-black text-white flex justify-center">
+    <div class="max-w-7xl w-full text-center">
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-red-500 to-yellow-400 text-transparent bg-clip-text leading-tight 
+                animate-pulse drop-shadow-lg transition-transform duration-300 hover:scale-105 hover:drop-shadow-2xl">
+                What We Offer
+            </h2>
+        </div>
+        
+
+        <!-- Services Section -->
+        <div class="flex flex-col space-y-16 px-6 md:px-20 w-full items-center justify-center">
+        
+            <script>
+                const services = [
+                    {
+                        title: "Branding & Design",
+                        description: "We create logos, portfolios & build a unique brand identity.",
+                        imageUrl: "./assets/branding_h.jpg",
+                        gradient: "from-red-500 to-yellow-400",
+                        pageUrl: "./branding.html"
+                    },
+                    {
+                        title: "Web & Software",
+                        description: "We build high-performance websites & ERP solutions.",
+                        imageUrl: "./assets/website.png",
+                        gradient: "from-blue-500 to-purple-400",
+                        pageUrl: "./getWebsiteNow.html"
+                    },
+                    {
+                        title: "Marketing & Growth",
+                        description: "SEO, social media, and targeted advertising to drive success.",
+                        imageUrl: "./assets/growth_h.jpg",
+                        gradient: "from-green-400 to-teal-500",
+                        pageUrl: "./Marketing.html"
+                    },
+                    {
+                        title: "Consulting & Strategy",
+                        description: "We guide brands towards sustainable business growth.",
+                        imageUrl: "./assets/consultation.png",
+                        gradient: "from-pink-500 to-red-400",
+                        pageUrl: "./freeConsultation.html"
+                    },
+                    {
+                        title: "Content Creation",
+                        description: "Engaging copy, visuals, and storytelling that captivate audiences.",
+                        imageUrl: "./assets/adsShoots_h.jpg",
+                        gradient: "from-yellow-400 to-orange-500",
+                        pageUrl: "./contentCreation(Ads_Shoots).html"
+                    },
+                    {
+                        title: "Social Media Management",
+                        description: "Managing and growing your online presence effectively.",
+                        imageUrl: "./assets/socialMedia1_h.jpg",
+                        gradient: "from-purple-500 to-blue-400",
+                        pageUrl: "./socialMedia.html"
+                    },
+                    {
+                        title: "SEO & Digital Marketing",
+                        description: "Boost your online visibility with advanced SEO and marketing strategies.",
+                        imageUrl: "./assets/seo.png",
+                        gradient: "from-green-500 to-blue-400",
+                        pageUrl: "./SEO.html"
+                    },
+                    {
+                        title: "ERP Solutions",
+                        description: "Streamline your business with powerful and scalable ERP systems.",
+                        imageUrl: "./assets/erp1_h.jpg",
+                        gradient: "from-indigo-500 to-purple-400",
+                        pageUrl: "./erpSystems.html"
+                    },
+                    {
+                        "title": "App Development",
+                        "description": "Build cutting-edge mobile and web applications tailored to your business needs.",
+                        "imageUrl": "./assets/appDevelopment.avif",
+                        "gradient": "from-blue-500 to-teal-400",
+                        "pageUrl": "./appDevelopment.html"
+                    }
+
+                ];
+
+                let serviceHTML = "";
+                services.forEach((service, index) => {
+                    const flexDirection = index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse";
+                    serviceHTML += `
+                        <div class="group flex flex-col ${flexDirection} w-full items-center justify-between gap-12 md:gap-16 lg:gap-20 transition-transform duration-300 hover:scale-105">
+                            
+                            <!-- Text Section -->
+                            <div class="w-full lg:w-1/2 flex-1 text-center lg:text-left px-6">
+                                <h3 class="text-3xl font-bold bg-gradient-to-r ${service.gradient} text-transparent bg-clip-text pt-3 pb-3 leading-snug">
+                                    ${service.title}
+                                </h3>
+                                <p class="mt-4 text-gray-300 text-lg">${service.description}</p>
+                                <a href="${service.pageUrl}" class="mt-6 inline-block px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg shadow-md transition-transform hover:scale-110 hover:bg-yellow-600">
+                                    Learn More
+                                </a>
+                            </div>
+                            
+                            <!-- Image Section -->
+                            <div class="w-full lg:w-1/2 flex-1 flex justify-center">
+                                <div class="relative w-full max-w-xs lg:max-w-sm rounded-xl overflow-hidden shadow-lg border-2 border-gray-700 hover:border-yellow-500 transition-all duration-300">
+                                    <img src="${service.imageUrl}" alt="${service.title}" class="w-full h-full object-cover brightness-90 transition-all duration-300 group-hover:brightness-100">
+                                </div>
+                            </div>
+
+                        </div>
+                    `;
+                });
+
+                document.write(serviceHTML);
+            </script>
+        
+        </div>
+            
+    </div>
+</section>
+
+
+
+
+<section class="w-full bg-black text-white py-20 px-6 md:px-20 relative overflow-hidden">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-red-400 to-yellow-300 inline-block text-transparent bg-clip-text">
+        How We Work
+    </h2>
+
+    <!-- Scrollable Cards Container -->
+    <div class="relative w-full ">
+        <div class="flex space-x-12 animate-scroll w-[200%]">
+            
+            <!-- Duplicate the steps for seamless scrolling -->
+            <div class="flex space-x-12 scrolling-content">
+                <div class="work-step">
+                    <h3>Consultation</h3>
+                    <p>We discuss your goals, challenges, and vision to build a solid plan.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Strategy & Design</h3>
+                    <p>Crafting a unique strategy and brand identity tailored to your business.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Development & Execution</h3>
+                    <p>Bringing ideas to life with cutting-edge tech and marketing execution.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Marketing & Growth</h3>
+                    <p>Strategic marketing campaigns to maximize brand visibility & revenue.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Ongoing Support</h3>
+                    <p>Long-term collaboration with continuous support & scaling strategies.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Testing & Optimization</h3>
+                    <p>We refine and optimize strategies based on data-driven insights.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Scaling & Expansion</h3>
+                    <p>Taking your business to the next level with advanced growth strategies.</p>
+                </div>
+            </div>
+
+            <!-- Duplicate for infinite scrolling effect -->
+            <div class="flex space-x-12 scrolling-content">
+                <div class="work-step">
+                    <h3>Consultation</h3>
+                    <p>We discuss your goals, challenges, and vision to build a solid plan.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Strategy & Design</h3>
+                    <p>Crafting a unique strategy and brand identity tailored to your business.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Development & Execution</h3>
+                    <p>Bringing ideas to life with cutting-edge tech and marketing execution.</p>
+                </div>
+
+                <div class="work-step">
+                    <h3>Marketing & Growth</h3>
+                    <p>Strategic marketing campaigns to maximize brand visibility & revenue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="mt-20 text-center">
+        <a href="./contactUs.html" class="px-8 py-4 bg-gradient-to-r from-red-500 to-yellow-400 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-red-700 transition transform hover:scale-110 hover:shadow-yellow-500/50">
+            🚀 Get Started Today
+        </a>
+    </div>
+</section>
+
+
+
+<section class="h-screen flex flex-col lg:flex-row items-center justify-end bg-black text-white relative px-6 lg:px-10 rounded-xl">
+    <!-- Background Image with Fade Effect -->
+    <div class="absolute inset-0 lg:left-0 lg:w-3/6 w-full h-full bg-cover bg-center"
+        style="
+            background-image: url('./assets/scootCook.png'); 
+            mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        ">
+    </div>
+
+    <!-- Overlay for better text visibility on small screens -->
+    <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
+
+    <!-- Quote Text (Responsive Alignment) -->
+    <div class="relative z-10 max-w-2xl w-full lg:w-3/6 ml-auto pr-4 lg:pr-12 text-center lg:text-left px-6">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-relaxed tracking-wide bg-gradient-to-b from-red-500 to-yellow-400 text-transparent bg-clip-text drop-shadow-lg transition-transform duration-700 hover:scale-105">
+            "A brand is no longer what we tell the consumer it is - it is what consumers tell each other it is."
+        </h1>
+        <p class="mt-4 text-xl md:text-2xl lg:text-3xl font-semibold text-gray-300">- Scott Cook</p>
+    </div>
+</section>
+
+
+
+
+<section id="aboutus" class="w-full bg-black text-white mt-20 mb-10 py-20 px-6 md:px-16 lg:px-20">
+    <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+        
+        <!-- Text Content -->
+        <div class="w-full max-w-3xl transition-transform duration-300 ease-in-out hover:scale-105 hover:-translate-y-1">
+            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-red-500 to-yellow-400 inline-block text-transparent bg-clip-text">
+                About Brandomaniac
+            </h2>
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 mt-4 sm:mt-6">
+                We are a full-service agency dedicated to turning businesses into iconic brands. From strategic branding to cutting-edge software development, we empower businesses to stand out in a competitive market.
+            </p>
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 mt-4">
+                Whether you're a startup or an industry leader, we craft <span class="font-semibold text-white">tailored solutions</span> to drive <span class="font-semibold text-white">growth, visibility, and success</span>.
+            </p>
+            <a href="./contactUs.html" class="mt-6 sm:mt-8 inline-block px-6 sm:px-8 py-3 sm:py-4 bg-red-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-red-700 transition-transform duration-300 ease-in-out hover:scale-110 hover:-translate-y-1">
+                🚀 Discover More
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="bg-black text-white py-20">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            
+            <!-- Branding & Motto -->
+            <div class="text-center md:text-left">
+                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">&copy; 2024 All Rights Reserved</p>
+            </div>
+            
+
+            <!-- Contact Info -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Contact Us</h3>
+                <p class="mt-4 text-gray-400 text-lg">
+                    <span class="text-orange-400">Head Office:</span><br>
+                    Bapunagar, Ahmedabad<br> 
+                    Gujarat- 380024
+                </p>
+                <p class="mt-4 text-orange-400 hover:text-yellow-400 transition">hello.brandomaniac@gmail.com</p>
+                <!-- <p class="mt-2 text-gray-400 text-lg">+91 8086411901</p> -->
+            </div>
+
+            <!-- Newsletter & Social Links -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
+                <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
+                    <input id="emailInput" type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button id="subscribeBtn" class="text-orange-400 hover:text-yellow-400 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="mt-6 flex justify-center md:justify-start space-x-6">
+                    <a href="https://www.linkedin.com/company/brandomaniac-india/" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/brandomaniac.official/" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider Line -->
+    <div class="border-t border-orange-500 mt-12"></div>
+
+    <!-- Bottom Section -->
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center mt-8">
+        <p class="text-gray-400 text-lg">Designed with 🔥 by Brandomaniac</p>
+
+        <!-- Floating Scroll to Top Button -->
+        <div onclick="scrollToTop()" class="hidden md:block bg-gradient-to-r from-orange-500 to-yellow-400 text-black transition p-4 rounded-full shadow-lg cursor-pointer">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Script -->
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    AOS.init();
+
+    document.getElementById("subscribeBtn").addEventListener("click", async () => {
+        const emailInput = document.getElementById("emailInput");
+        const email = emailInput.value.trim();
+
+        if (!email) {
+            alert("Please enter an email!");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:5000/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await response.json();
+            alert(data.message);
+
+            if (data.success) {
+                emailInput.value = "";  // Clear the text field after successful submission
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to subscribe. Try again.");
+        }
+    });
+
+</script>
+
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Consultation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="form-handler.js"></script>  <!-- Replace with actual file path -->
+
+    <style>
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 165, 0, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); }
+        }
+
+        .glowing-btn {
+            background: linear-gradient(90deg, #FFA500, #FFD700);
+            color: black;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glowing-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Hero Section -->
+    <section class="w-full h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+        <!-- Floating Decorative Glow -->
+        <div class="absolute top-16 right-16 w-32 h-32 bg-yellow-400 opacity-40 rounded-full blur-3xl animate-pulse"></div>
+    
+        <!-- Heading with Glow Effect -->
+        <h1 class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500 relative">
+            Free Consultation
+        </h1>
+    
+        <!-- Subheading -->
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl">
+            Unlock expert insights tailored for your business. Book a free consultation and let’s take your brand to the next level!
+        </p>
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl">
+            Whether you need branding, marketing, or business growth solutions, our team is ready to provide expert advice. Get clarity, guidance, and a roadmap for success—all for free.
+        </p>
+    
+        <!-- Floating Decorative Glow -->
+        <div class="absolute bottom-16 left-16 w-24 h-24 bg-red-500 opacity-40 rounded-full blur-3xl animate-pulse"></div>
+    </section>
+
+
+    <!-- Consultation Section -->
+<section class="bg-black text-white py-20">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+        <h2 class="text-4xl font-extrabold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+            Your Consultation Will Include
+        </h2>
+        <div class="mt-10 space-y-6 text-lg text-gray-300">
+            <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    Business & Brand Analysis
+                </h3>
+                <p class="mt-2">A deep dive into your brand’s current positioning and business structure.</p>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    Brand Identity & Design Review
+                </h3>
+                <p class="mt-2">Assessing your visual identity, branding materials, and messaging consistency.</p>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    Marketing & Digital Strategy Insights
+                </h3>
+                <p class="mt-2">Analyzing your marketing efforts and providing actionable improvements.</p>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    Growth Strategy & Positioning
+                </h3>
+                <p class="mt-2">Exploring market trends and strategies to elevate your brand’s growth.</p>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    Website & Online Presence Check
+                </h3>
+                <p class="mt-2">Reviewing your website's performance, UX/UI design, and online visibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Booking Form -->
+    <section id="consultation-form" class="flex flex-col md:flex-row justify-center items-center gap-12 px-8 md:px-24 py-16">
+        
+        <!-- Form -->
+        <div class="w-full md:w-1/2 bg-gray-900 p-8 rounded-2xl shadow-lg">
+            <h2 class="text-3xl font-bold text-yellow-400 mb-6">Schedule Your Free Call</h2>
+            <form id="myForm" class="space-y-6">
+                <input type="hidden" id="extraText" value="Free Consultation Form Data">
+                <input type="text" id="name" placeholder="Your Name" class="w-full p-3 bg-transparent border-2 border-yellow-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <input type="email" id="email" placeholder="Your Email" class="w-full p-3 bg-transparent border-2 border-yellow-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <input type="tel" id="number" placeholder="Your Mobile Number" class="w-full p-3 bg-transparent border-2 border-yellow-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
+                <textarea id="message" placeholder="What do you need help with?" rows="5" class="w-full p-3 bg-transparent border-2 border-yellow-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required></textarea>
+                <button type="submit" class="glowing-btn w-full p-3 rounded-lg">Book Now</button>
+            </form>
+        </div>
+        
+
+        <!-- Right Side: Image -->
+        <div class="md:w-1/3">
+            <img src="./assets/consultation.png" alt="Consultation" class="w-full rounded-lg shadow-lg hover:scale-105 transition-transform">
+        </div>
+
+    </section>
+
+    <!-- Testimonials / Trust Section -->
+    <section class="text-center px-8 md:px-24 py-16">
+        <h2 class="text-4xl font-bold text-yellow-400 mb-6">What Our Clients Say</h2>
+        <div class="flex flex-col md:flex-row gap-8 justify-center">
+            <div class="w-full md:w-1/3 bg-gray-900 p-6 rounded-lg shadow-lg">
+                <p class="text-gray-300">“The consultation gave us so much clarity on our brand strategy. Highly recommend!”</p>
+                <p class="text-yellow-400 font-bold mt-4">— John Doe</p>
+            </div>
+            <div class="w-full md:w-1/3 bg-gray-900 p-6 rounded-lg shadow-lg">
+                <p class="text-gray-300">“The team’s insights were invaluable! Can’t wait to work with them again.”</p>
+                <p class="text-yellow-400 font-bold mt-4">— Sarah K.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-20 text-center">
+        <a href="./contactUs.html"
+        class="mt-12 px-10 py-4 text-lg font-semibold rounded-full bg-gradient-to-r 
+               from-orange-500 to-yellow-400 text-black shadow-lg transition 
+               hover:scale-110 hover:opacity-90"
+        data-aos="zoom-in" data-aos-duration="1400">
+         Get Started 🚀
+       </a>
+       </section>
+
+    <!-- Footer -->
+
+<!-- Footer -->
+<footer class="bg-black text-white py-20">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            
+            <!-- Branding & Motto -->
+            <div class="text-center md:text-left">
+                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
+                    STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
+                </h2>
+                <p class="mt-4 text-gray-400 text-lg">&copy; 2024 All Rights Reserved</p>
+            </div>
+            
+
+            <!-- Contact Info -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Contact Us</h3>
+                <p class="mt-4 text-gray-400 text-lg">
+                    <span class="text-orange-400">Head Office:</span><br>
+                    Bapunagar, Ahmedabad<br> 
+                    Gujarat- 380024
+                </p>
+                <p class="mt-4 text-orange-400 hover:text-yellow-400 transition">hello.brandomaniac@gmail.com</p>
+                <!-- <p class="mt-2 text-gray-400 text-lg">+91 8086411901</p> -->
+            </div>
+
+            <!-- Newsletter & Social Links -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
+                <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
+                    <input type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button class="text-orange-400 hover:text-yellow-400 transition"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <!-- Social Media Icons -->
+                <div class="mt-6 flex justify-center md:justify-start space-x-6">
+                    <a href="https://www.linkedin.com/company/brandomaniac-india/" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/brandomaniac.official/" class="text-2xl text-gray-400 hover:text-orange-400 transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider Line -->
+    <div class="border-t border-orange-500 mt-12"></div>
+
+    <!-- Bottom Section -->
+    <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center mt-8">
+        <p class="text-gray-400 text-lg">Designed with 🔥 by Brandomaniac</p>
+
+        <!-- Floating Scroll to Top Button -->
+        <div onclick="scrollToTop()" class="hidden md:block bg-gradient-to-r from-orange-500 to-yellow-400 text-black transition p-4 rounded-full shadow-lg cursor-pointer">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Script -->
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</body>
+</html>
