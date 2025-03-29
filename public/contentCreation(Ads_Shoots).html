@@ -9,7 +9,7 @@
 <body class="bg-black text-white">
     
     <!-- Hero Section (Dynamic) -->
-    <section id="hero-section" class="w-full h-screen flex flex-col md:flex-row items-center justify-between  px-8 md:px-0 ">
+    <section id="hero-section" class="w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-0 ">
         <!-- Hero content will be inserted here dynamically -->
     </section>
 
@@ -42,7 +42,7 @@
             
             <!-- Branding & Motto -->
             <div class="text-center md:text-left">
-                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <img src="./../assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
                 <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
                     STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
                 </h2>
@@ -66,8 +66,10 @@
             <div class="text-center md:text-left">
                 <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
                 <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
-                    <input type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
-                    <button class="text-orange-400 hover:text-yellow-400 transition"><i class="fas fa-paper-plane"></i></button>
+                    <input id="emailInput" type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button id="subscribeBtn" class="text-orange-400 hover:text-yellow-400 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
                 <!-- Social Media Icons -->
                 <div class="mt-6 flex justify-center md:justify-start space-x-6">
@@ -92,7 +94,6 @@
         </div>
     </div>
 </footer>
-
 <!-- Scroll to Top Script -->
 <script>
     function scrollToTop() {
@@ -106,37 +107,30 @@
 
 
     <script>
-       const heroData = {
-    title: "Social Media Management That Drives Engagement",
-    description: "Social media is more than just posting—it's about building a community, engaging your audience, and growing your brand. We manage your social media presence with strategic planning, content creation, and analytics-driven insights.",
-    imageUrl: "./assets/socialMedia1_h.jpg"
+        // Hero section data
+const heroData = {
+    title: "Content Creation That Engages & Converts",
+    description: "Content is the foundation of digital success. We specialize in crafting high-quality content that captivates your audience, builds brand authority, and drives meaningful engagement.",
+    imageUrl: "./../assets/adsShoots_h.jpg"
 };
 
-// Social Media Management categories data
+// Content Creation categories data
 const brandingTypes = [
-    { title: "Content Strategy & Planning 📅", description: "Develop a tailored content strategy with a consistent posting schedule to maximize engagement and brand awareness." },
-
-    { title: "Social Media Content Creation ✍️", description: "Craft engaging posts, graphics, and videos tailored to your brand's voice and audience." },
-
-    { title: "Community Management 💬", description: "Engage with your audience through comments, messages, and interactions to build a loyal community." },
-
-    { title: "Social Media Advertising 📢", description: "Create and manage paid ad campaigns on platforms like Facebook, Instagram, and LinkedIn to drive targeted traffic and conversions." },
-
-    { title: "Influencer Marketing 🤝", description: "Collaborate with influencers and brand ambassadors to expand your reach and credibility." },
-
-    { title: "Social Media Analytics 📊", description: "Monitor and analyze performance metrics to refine strategies and improve engagement." },
-
-    { title: "Reputation Management 🌟", description: "Manage online reviews, feedback, and brand perception to maintain a positive public image." },
-
-    { title: "Platform-Specific Strategies 🚀", description: "Optimize content and engagement strategies for different platforms like Instagram, Facebook, LinkedIn, Twitter, and TikTok." }
+    { title: "Written Content ✍️", description: "Create compelling blogs, articles, and website copy that inform, engage, and convert your audience." },
+    { title: "Visual Content 🎨", description: "Design stunning infographics, banners, and creatives to enhance your brand’s storytelling." },
+    { title: "Video Content 🎥", description: "Produce high-quality video content including reels, explainers, and vlogs to capture attention and boost engagement." },
+    { title: "Audio Content 🎙️", description: "Develop immersive podcasts, audiobooks, and voiceovers that connect with listeners on a deeper level." },
+    { title: "Interactive Content 🎮", description: "Engage users with quizzes, surveys, AR/VR experiences, and interactive web content." },
+    { title: "Social Media Content 📱", description: "Craft impactful social media posts, stories, and user-generated content to grow your online presence." },
+    { title: "Ads & Commercials 📢", description: "Create high-converting ad campaigns, promotional videos, and compelling copy that drive sales and brand awareness." },
+    { title: "Photography & Shoots 📸", description: "Capture stunning visuals through professional photoshoots, product photography, and corporate headshots to enhance your brand identity." }
 ];
 
-// Social Media Management Summary data
+// Content Creation Summary data
 const brandingSummaryData = {
-    title: "Why Social Media Management Matters?",
-    description: "A strong social media presence helps you connect with your audience, build brand authority, and drive business growth. With effective social media management, you can stay ahead of trends, increase engagement, and turn followers into loyal customers."
+    title: "Why Content Creation Matters?",
+    description: "Great content builds trust, enhances brand visibility, and increases audience engagement. Whether you need blog articles, engaging videos, or social media content, we help you create content that delivers results."
 };
-
 
         // Get Hero section and insert content dynamically
     document.getElementById("hero-section").innerHTML = `

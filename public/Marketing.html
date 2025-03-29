@@ -42,7 +42,7 @@
             
             <!-- Branding & Motto -->
             <div class="text-center md:text-left">
-                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <img src="./../assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
                 <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
                     STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
                 </h2>
@@ -66,8 +66,10 @@
             <div class="text-center md:text-left">
                 <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
                 <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
-                    <input type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
-                    <button class="text-orange-400 hover:text-yellow-400 transition"><i class="fas fa-paper-plane"></i></button>
+                    <input id="emailInput" type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button id="subscribeBtn" class="text-orange-400 hover:text-yellow-400 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
                 <!-- Social Media Icons -->
                 <div class="mt-6 flex justify-center md:justify-start space-x-6">
@@ -108,28 +110,38 @@
     <script>
         // Hero section data
         const heroData = {
-    title: "ERP Systems That Streamline Your Business",
-    description: "Enterprise Resource Planning (ERP) systems help businesses optimize operations, improve efficiency, and drive growth. From general-purpose to industry-specific solutions, we provide ERP systems tailored to your needs.",
-    imageUrl: "./assets/erp1_h.jpg"
+    title: "Marketing Strategies That Drive Growth",
+    description: "Marketing is the key to brand visibility and customer engagement. We provide result-driven marketing solutions that help businesses reach their target audience, build brand loyalty, and increase conversions.",
+    imageUrl: "./../assets/growth_h.jpg"
 };
 
-// ERP System categories data
+// Marketing categories data
 const brandingTypes = [
-    { title: "General-Purpose ERP Systems 🖥️", description: "Versatile ERP solutions designed to manage business processes across various industries, suitable for businesses of all sizes." },
-    
-    { title: "Industry-Specific ERP Systems 🏭", description: "Custom-built ERP solutions tailored for specific industries such as manufacturing, healthcare, retail, construction, and education." },
+    { title: "Digital Marketing 💻", description: "Leverage online platforms such as social media, search engines, and email to reach and engage your audience effectively." },
 
-    { title: "Function-Based ERP Systems ⚙️", description: "ERP solutions focused on specific business functions like finance, HR, supply chain management, and customer relationship management (CRM)." }
+    { title: "Content Marketing ✍️", description: "Create valuable, relevant content to attract and retain a clearly defined audience and drive profitable customer action." },
+
+    { title: "Social Media Marketing 📱", description: "Promote your brand and engage with your audience through platforms like Facebook, Instagram, LinkedIn, and Twitter." },
+
+    { title: "SEO (Search Engine Optimization) 🔍", description: "Optimize your website and content to rank higher on search engines and drive organic traffic." },
+
+    { title: "Email Marketing 📧", description: "Nurture leads and retain customers through personalized email campaigns and automation." },
+
+    { title: "Influencer Marketing 🌟", description: "Collaborate with influencers and industry leaders to promote your brand to a larger audience." },
+
+    { title: "Traditional Marketing 📺", description: "Utilize offline channels like TV, radio, print media, and billboards to reach a broader audience." },
+
+    { title: "Guerrilla Marketing 🚀", description: "Implement unconventional and creative marketing tactics to grab attention and generate buzz around your brand." }
 ];
 
-// ERP Summary data
+// Marketing Summary data
 const brandingSummaryData = {
-    title: "Why ERP Systems Matter?",
-    description: "ERP systems help businesses improve productivity, streamline operations, and make data-driven decisions. Whether you need a general-purpose ERP, an industry-specific solution, or a function-based system, we provide the right ERP for your needs."
+    title: "Why Marketing Matters?",
+    description: "Marketing is the driving force behind business growth. A well-crafted strategy helps you connect with your audience, enhance brand awareness, and increase sales. Whether you're a startup or an established business, we create marketing solutions that deliver real results."
 };
 
 
-    // Get Hero section and insert content dynamically
+        // Get Hero section and insert content dynamically
     document.getElementById("hero-section").innerHTML = `
     <section class="h-screen w-full flex flex-col lg:flex-row items-center justify-end bg-black text-white relative px-3 md:px-4 rounded-xl">
         <!-- Background Image with Fade Effect (Hidden on Small Screens) -->
@@ -153,7 +165,6 @@ const brandingSummaryData = {
         </div>
     </section>
 `;
-
 
         // Get Branding section and insert content dynamically
 const brandingSection = document.getElementById("branding-section");

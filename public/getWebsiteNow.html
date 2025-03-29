@@ -3,14 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branding Services</title>
+    <title>Get Your Website Now</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body class="bg-black text-white">
-    
+
     <!-- Hero Section (Dynamic) -->
     <section id="hero-section" class="w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-0 ">
         <!-- Hero content will be inserted here dynamically -->
+    </section>
+
+    <section class="h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-extrabold uppercase tracking-wide text-transparent"
+            style="-webkit-text-stroke: 2px rgb(255, 123, 0);"
+            data-aos="fade-down" data-aos-duration="1000">
+            Get Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">Website</span> Now
+        </h1>
+        <p class="text-lg md:text-2xl mt-6 max-w-3xl text-gray-300 leading-relaxed" 
+           data-aos="fade-up" data-aos-duration="1200">
+            Elevate your business with a stunning, high-performance <span class="text-yellow-400 font-semibold">website</span>.  
+            Start today and establish your <span class="text-yellow-400 font-semibold">strong online presence!</span>
+        </p>
+
+        <!-- Benefits Section -->
+        <div class="grid md:grid-cols-3 gap-8 mt-12 max-w-4xl" data-aos="fade-up" data-aos-duration="1300">
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-yellow-400">🚀 Boost Sales</h3>
+                <p class="mt-2 text-gray-300">A website turns visitors into customers and increases conversions.</p>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-yellow-400">🌍 Expand Globally</h3>
+                <p class="mt-2 text-gray-300">Reach audiences beyond your local area and grow your brand worldwide.</p>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold text-yellow-400">📱 Mobile Optimized</h3>
+                <p class="mt-2 text-gray-300">Your site will look stunning on every device, from desktops to smartphones.</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Branding Types (Dynamic) -->
@@ -23,15 +58,17 @@
         <!-- Branding summary content will be inserted here dynamically -->
     </section>
 
+     <!-- Call to Action Button -->
     <section class="pt-20 text-center">
-        <a href="./contactUs.html"
-        class="mt-12 px-10 py-4 text-lg font-semibold rounded-full bg-gradient-to-r 
-               from-orange-500 to-yellow-400 text-black shadow-lg transition 
-               hover:scale-110 hover:opacity-90"
-        data-aos="zoom-in" data-aos-duration="1400">
-         Get Started 🚀
-       </a>
-       </section>
+     <a href="./contactUs.html"
+     class="mt-12 px-10 py-4 text-lg font-semibold rounded-full bg-gradient-to-r 
+            from-orange-500 to-yellow-400 text-black shadow-lg transition 
+            hover:scale-110 hover:opacity-90"
+     data-aos="zoom-in" data-aos-duration="1400">
+      Get Started 🚀
+    </a>
+    </section>
+    
 
     <!-- Footer -->
 
@@ -42,7 +79,7 @@
             
             <!-- Branding & Motto -->
             <div class="text-center md:text-left">
-                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <img src="./../assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
                 <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
                     STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
                 </h2>
@@ -66,8 +103,10 @@
             <div class="text-center md:text-left">
                 <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
                 <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
-                    <input type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
-                    <button class="text-orange-400 hover:text-yellow-400 transition"><i class="fas fa-paper-plane"></i></button>
+                    <input id="emailInput" type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button id="subscribeBtn" class="text-orange-400 hover:text-yellow-400 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
                 <!-- Social Media Icons -->
                 <div class="mt-6 flex justify-center md:justify-start space-x-6">
@@ -105,42 +144,43 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
+    
+
+    <!-- AOS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // Hero section data
-        const heroData = {
-    title: "Marketing Strategies That Drive Growth",
-    description: "Marketing is the key to brand visibility and customer engagement. We provide result-driven marketing solutions that help businesses reach their target audience, build brand loyalty, and increase conversions.",
-    imageUrl: "./assets/growth_h.jpg"
-};
 
-// Marketing categories data
-const brandingTypes = [
-    { title: "Digital Marketing 💻", description: "Leverage online platforms such as social media, search engines, and email to reach and engage your audience effectively." },
+    const heroData = {
+    title: "Web Solutions Tailored to Your Needs",
+    description: "Every business requires a website that aligns with its goals. From static websites to dynamic applications, we develop high-performance web solutions that enhance user experience and drive results.",
+    imageUrl: "./../assets/website.png"
+    };
 
-    { title: "Content Marketing ✍️", description: "Create valuable, relevant content to attract and retain a clearly defined audience and drive profitable customer action." },
+    // Website categories data
+    const brandingTypes = [
+        { title: "Static Websites 📄", description: "Simple, fast-loading websites with fixed content that does not change unless manually updated." },
 
-    { title: "Social Media Marketing 📱", description: "Promote your brand and engage with your audience through platforms like Facebook, Instagram, LinkedIn, and Twitter." },
+        { title: "Dynamic Websites ⚙️", description: "Websites with interactive content that updates in real time based on user interaction or database integration." },
 
-    { title: "SEO (Search Engine Optimization) 🔍", description: "Optimize your website and content to rank higher on search engines and drive organic traffic." },
+        { title: "Single-Page Websites 🖥️", description: "Websites where all content is loaded on a single page, providing smooth scrolling and seamless navigation." },
 
-    { title: "Email Marketing 📧", description: "Nurture leads and retain customers through personalized email campaigns and automation." },
+        { title: "Multi-Page Websites 📑", description: "Traditional websites with multiple interconnected pages for better content organization." },
 
-    { title: "Influencer Marketing 🌟", description: "Collaborate with influencers and industry leaders to promote your brand to a larger audience." },
+        { title: "E-Commerce Websites 🛒", description: "Websites that facilitate online transactions, including product listings, cart functionality, and secure payments." },
 
-    { title: "Traditional Marketing 📺", description: "Utilize offline channels like TV, radio, print media, and billboards to reach a broader audience." },
+        { title: "Portfolio Websites 🎨", description: "Visually appealing websites designed to showcase creative work, such as photography, design, and art projects." },
 
-    { title: "Guerrilla Marketing 🚀", description: "Implement unconventional and creative marketing tactics to grab attention and generate buzz around your brand." }
-];
+        { title: "Landing Pages 🎯", description: "Single-page marketing websites optimized for lead generation and conversion-focused campaigns." },
+    ];
 
-// Marketing Summary data
-const brandingSummaryData = {
-    title: "Why Marketing Matters?",
-    description: "Marketing is the driving force behind business growth. A well-crafted strategy helps you connect with your audience, enhance brand awareness, and increase sales. Whether you're a startup or an established business, we create marketing solutions that deliver real results."
-};
+    // Website Summary data
+    const brandingSummaryData = {
+        title: "Why Choosing the Right Website Matters?",
+        description: "Your website is your digital identity. Whether you need a static site for simple information sharing or a dynamic web application with complex functionalities, we build custom solutions that enhance user engagement and business growth."
+    };
 
-
-        // Get Hero section and insert content dynamically
-    document.getElementById("hero-section").innerHTML = `
+// Get Hero section and insert content dynamically
+document.getElementById("hero-section").innerHTML = `
     <section class="h-screen w-full flex flex-col lg:flex-row items-center justify-end bg-black text-white relative px-3 md:px-4 rounded-xl">
         <!-- Background Image with Fade Effect (Hidden on Small Screens) -->
         <div class="absolute inset-0 lg:left-0 lg:w-3/6 w-full h-full bg-cover bg-center hidden md:block"
@@ -163,8 +203,7 @@ const brandingSummaryData = {
         </div>
     </section>
 `;
-
-        // Get Branding section and insert content dynamically
+            // Get Branding section and insert content dynamically
 const brandingSection = document.getElementById("branding-section");
 
 // Add a title for the section
@@ -198,13 +237,13 @@ for (let i = 0; i < brandingTypes.length; i += 2) {
     brandingSection.appendChild(rowDiv);
 }
 
-
         // Get Branding Summary section and insert content dynamically
         document.getElementById("branding-summary").innerHTML = `
             <h2 class="text-5xl font-bold text-yellow-400">${brandingSummaryData.title}</h2>
             <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">${brandingSummaryData.description}</p>
         `;
+    
+        AOS.init();
     </script>
-
 </body>
 </html>

@@ -3,9 +3,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -19,6 +19,9 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 
+// Serve Static Files (Frontend)
+app.use(express.static(path.join(__dirname, "public")));
+
 // Schema & Model for FormData
 const FormDataSchema = new mongoose.Schema({
     extraText: { type: String },
@@ -27,14 +30,12 @@ const FormDataSchema = new mongoose.Schema({
     number: { type: String, required: true },
     message: { type: String }
 });
-
 const FormData = mongoose.model("FormData", FormDataSchema);
 
 // Schema & Model for Newsletter Subscriptions
 const NewsletterSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true }
 });
-
 const Newsletter = mongoose.model("Newsletter", NewsletterSchema);
 
 // POST API for Form Submission
@@ -61,7 +62,6 @@ app.post("/subscribe", async (req, res) => {
             return res.status(400).json({ success: false, message: "Email is required!" });
         }
 
-        // Check if email already exists
         const existingSubscriber = await Newsletter.findOne({ email });
         if (existingSubscriber) {
             return res.status(400).json({ success: false, message: "Email already subscribed!" });
@@ -76,5 +76,15 @@ app.post("/subscribe", async (req, res) => {
     }
 });
 
-// Start Server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// API Status Route
+app.get("/api", (req, res) => {
+    res.json({ success: true, message: "API is working!" });
+});
+
+// Catch-All Route to Serve Frontend (Handles Direct URL Access)
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "web1.html"));  // Change "web1.html" if needed
+});
+
+// Export the app for Vercel
+module.exports = app;

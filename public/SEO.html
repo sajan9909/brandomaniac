@@ -42,7 +42,7 @@
             
             <!-- Branding & Motto -->
             <div class="text-center md:text-left">
-                <img src="./assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
+                <img src="./../assets/image.png" alt="Company Logo" class="h-20 w-20 mx-auto md:mx-0 rounded-full border-4 border-gray-300 shadow-lg">
                 <h2 class="text-4xl font-extrabold mt-6 bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">
                     STRATEGIZE.<br>OPTIMIZE.<br>DIGITIZE.
                 </h2>
@@ -66,8 +66,10 @@
             <div class="text-center md:text-left">
                 <h3 class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-yellow-400 text-transparent bg-clip-text">Subscribe to Our Newsletter</h3>
                 <div class="mt-4 flex items-center border-b border-orange-500 pb-2">
-                    <input type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
-                    <button class="text-orange-400 hover:text-yellow-400 transition"><i class="fas fa-paper-plane"></i></button>
+                    <input id="emailInput" type="email" placeholder="Enter your email" class="bg-black text-gray-400 px-4 py-2 outline-none w-full">
+                    <button id="subscribeBtn" class="text-orange-400 hover:text-yellow-400 transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
                 <!-- Social Media Icons -->
                 <div class="mt-6 flex justify-center md:justify-start space-x-6">
@@ -109,7 +111,7 @@
        const heroData = {
     title: "SEO that Boosts Visibility & Rankings",
     description: "Search Engine Optimization (SEO) is the key to online success. We help businesses rank higher on search engines, drive organic traffic, and increase conversions through strategic SEO techniques.",
-    imageUrl: "./assets/seo.png"
+    imageUrl: "./../assets/seo.png"
 };
 
 // SEO categories data
