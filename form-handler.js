@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Submitting data:", formData); // Debugging
 
         try {
-            const response = await fetch("/api/submit", {  // Use relative path
+            const response = await fetch("http://localhost:5000/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
