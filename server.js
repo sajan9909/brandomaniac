@@ -100,6 +100,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+// Serve static files from 'public' and 'assets' folders
+app.use(express.static("public"));
+app.use(express.static("assets"));
 
 // MongoDB Connection (Updated)
 mongoose.connect(process.env.MONGO_URI)
@@ -167,7 +170,7 @@ app.post("/subscribe", async (req, res) => {
 
 // Default Route
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/web1.html"); // Change 'home.html' to your file name
+    res.sendFile(__dirname + "/public/web1.html");
 });
 ;
 
