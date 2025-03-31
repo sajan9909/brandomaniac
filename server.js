@@ -167,8 +167,9 @@ app.post("/subscribe", async (req, res) => {
 
 // Default Route
 app.get("/", (req, res) => {
-    res.send("API is running...");
+    res.sendFile(__dirname + "/public/web1.html"); // Change 'home.html' to your file name
 });
+;
 
 // Start the Server
 const PORT = process.env.PORT || 5000;
