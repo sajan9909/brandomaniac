@@ -107,7 +107,9 @@ app.use(cors());
 app.use(bodyParser.json());
 // Serve static files from 'public' and 'assets' folders
 app.use(express.static("public"));
-app.use(express.static("assets"));
+
+app.use("/assets", express.static(__dirname + "/assets"));
+
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
