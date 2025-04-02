@@ -9,14 +9,14 @@
 // // Middleware
 // app.use(cors());
 // app.use(bodyParser.json());
+// // Serve static files from 'public' and 'assets' folders
+// app.use(express.static("public"));
+// app.use(express.static("assets"));
 
-// // MongoDB Connection
-// mongoose.connect(process.env.MONGO_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// })
-// .then(() => console.log("MongoDB Connected"))
-// .catch(err => console.log(err));
+// // MongoDB Connection (Updated)
+// mongoose.connect(process.env.MONGO_URI)
+//     .then(() => console.log("✅ MongoDB Connected"))
+//     .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 // // Schema & Model for FormData
 // const FormDataSchema = new mongoose.Schema({
@@ -48,6 +48,7 @@
 //         await newEntry.save();
 //         res.status(201).json({ success: true, message: "Data stored successfully" });
 //     } catch (error) {
+//         console.error("❌ Error submitting form:", error);
 //         res.status(500).json({ success: false, message: "Server error" });
 //     }
 // });
@@ -71,19 +72,23 @@
 
 //         res.status(201).json({ success: true, message: "Subscribed successfully!" });
 //     } catch (error) {
+//         console.error("❌ Error subscribing:", error);
 //         res.status(500).json({ success: false, message: "Server error" });
 //     }
 // });
 
 // // Default Route
 // app.get("/", (req, res) => {
-//     res.send("API is running...");
+//     res.sendFile(__dirname + "/public/web1.html");
 // });
+// ;
 
-// // Export the app for Vercel
+// // Start the Server
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+// // Export for Vercel
 // module.exports = app;
-
-
 
 
 
@@ -104,7 +109,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.static("assets"));
 
-// MongoDB Connection (Updated)
+// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ MongoDB Connected"))
     .catch(err => console.error("❌ MongoDB Connection Error:", err));
@@ -168,11 +173,31 @@ app.post("/subscribe", async (req, res) => {
     }
 });
 
+// Routes for all static pages
+const pages = [
+    "appDevelopment",
+    "branding",
+    "contactUs",
+    "contentCreation(Ads_Shoots)",
+    "erpSystems",
+    "freeConsultation",
+    "getWebsiteNow",
+    "Marketing",
+    "SEO",
+    "socialMedia",
+    "web1"
+];
+
+pages.forEach((page) => {
+    app.get(`/${page}`, (req, res) => {
+        res.sendFile(__dirname + `/public/${page}.html`);
+    });
+});
+
 // Default Route
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/web1.html");
 });
-;
 
 // Start the Server
 const PORT = process.env.PORT || 5000;
