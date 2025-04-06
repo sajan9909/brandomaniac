@@ -295,26 +295,24 @@ body, html {
         });
     </script>
 
-<section class="w-full h-screen sm:h-[33vh] flex items-center justify-center bg-black">
+<section class="w-full h-screen sm:h-[33vh] md:h-screen flex items-center justify-center bg-black">
     <div class="relative w-full h-full max-w-screen-xl mx-auto shadow-2xl border border-gray-700">
-        
-        <!-- Background Video -->
-        <video 
-    autoplay 
-    loop 
-    muted 
-    playsinline 
-    preload="auto" 
-    class="absolute top-0 left-0 w-full h-full object-cover will-change-transform"
-    disablePictureInPicture
-    controlsList="nodownload nofullscreen noremoteplayback"
->
-    <source src="./../assets/build-your-brand-video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+
+        <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="auto"
+            class="absolute top-0 left-0 w-full h-full object-cover will-change-transform"
+            disablePictureInPicture
+            controlsList="nodownload nofullscreen noremoteplayback"
+        >
+            <source src="./../assets/build-your-brand-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
 
-        <!-- Overlay for Better Visibility (Fixed, No Color Change) -->
         <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
     </div>
